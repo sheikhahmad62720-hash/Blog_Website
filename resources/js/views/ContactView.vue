@@ -27,7 +27,7 @@ async function submit() {
 </script>
 
 <template>
-    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <div class="mx-auto max-w-3xl px-4 py-5 sm:px-6">
         <span class="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
             Get in touch
         </span>
