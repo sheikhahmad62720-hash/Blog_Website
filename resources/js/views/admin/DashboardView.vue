@@ -73,13 +73,27 @@ function statusClass(status) {
             </div>
             <ul class="divide-y divide-slate-100 dark:divide-slate-800">
                 <li v-for="post in recent" :key="post.id" class="flex items-center justify-between gap-4 py-3.5">
-                    <div class="min-w-0">
-                        <p class="truncate text-sm font-semibold text-slate-800 dark:text-slate-200">{{ post.title }}</p>
-                        <div class="mt-0.5 flex items-center gap-2">
-                            <span :class="statusClass(post.status)" class="rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize">
-                                {{ post.status }}
-                            </span>
-                            <span class="text-xs text-slate-400">{{ post.author?.name }}</span>
+                    <div class="flex items-center gap-3 min-w-0">
+                        <img
+                            v-if="post.featured_image"
+                            :src="post.featured_image"
+                            :alt="post.title"
+                            class="h-12 w-12 shrink-0 rounded-lg object-cover"
+                            loading="lazy"
+                        />
+                        <div v-else class="h-12 w-12 shrink-0 rounded-lg bg-gradient-to-br from-indigo-50 to-violet-100 flex items-center justify-center dark:from-slate-800 dark:to-slate-900">
+                            <svg class="h-6 w-6 text-indigo-300 dark:text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="truncate text-sm font-semibold text-slate-800 dark:text-slate-200">{{ post.title }}</p>
+                            <div class="mt-0.5 flex items-center gap-2">
+                                <span :class="statusClass(post.status)" class="rounded-full px-2 py-0.5 text-[11px] font-semibold capitalize">
+                                    {{ post.status }}
+                                </span>
+                                <span class="text-xs text-slate-400">{{ post.author?.name }}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="flex shrink-0 items-center gap-3">
