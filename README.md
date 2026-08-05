@@ -80,43 +80,6 @@ Open http://localhost:8001
 > Note: dev assets are served by Vite on port 5173 via Laravel's `@vite`.
 > For a production-like preview run `npm run build` then just `php artisan serve`.
 
-## Demo credentials
-- Admin: `admin@blog.test` / `password`
-
-## Folder structure
-
-```
-app/
-├── Http/
-│   ├── Controllers/         # Post, Category, Tag, Comment, Auth, Author,
-│   │                        # Contact, Newsletter, Like, Upload, Seo
-│   ├── Requests/           # Validation form requests
-│   └── Resources/          # PostResource, CommentResource (JSON transformers)
-├── Models/                 # Post, Category, Tag, Comment, PostLike, ...
-└── Policies/               # CommentPolicy
-
-database/
-├── migrations/             # users, categories, tags, posts, comments, likes,
-│                           # newsletter_subscribers, contact_messages
-└── seeders/                # demo admin, authors, categories, tags, posts
-
-resources/js/
-├── components/
-│   ├── layout/             # NavBar, Footer
-│   ├── blog/               # PostCard, PostList, PostContent, TableOfContents, RelatedPosts, ShareButtons
-│   ├── comments/           # CommentSection, CommentItem, CommentForm
-│   ├── ui/                 # SearchBar, ThemeToggle, Pagination, NewsletterForm, ErrorList
-│   └── editor/             # RichTextEditor
-├── views/                  # HomeView, SinglePostView, CategoryView, TagView,
-│   │                       # AuthorView, AboutView, ContactView, SearchView,
-│   │                       # LoginView, RegisterView, NotFoundView
-│   └── admin/              # AdminLayout, DashboardView, PostsListView, PostEditorView
-├── composables/            # usePosts, useAuth, useComments, useTheme
-├── store/                  # Pinia: authStore, postStore
-├── router/                 # index.js (route guards for admin)
-├── services/               # api.js (axios layer)
-├── App.vue
-└── app.js                  # Vue entry point
 ```
 
 ## Naming conventions
